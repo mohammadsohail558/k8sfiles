@@ -8,6 +8,6 @@ spec: #Spec defines the behavior of a service
   selector:  #Route service traffic to pods with label keys and values matching this selector
     app: ion
     type: LoadBalancer  #type determines how the Service is exposed
-    ports:
-      -port: 80  #The port that will be exposed by this service
-      targetPort: 80 #Number or name of the port to access on the pods targeted by the service
+  ports:
+   - port: 80  #The port that will be exposed by this service
+     targetPort: 80 #Number or name of the port to access on the pods targeted by the service
