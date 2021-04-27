@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ion-deployment   #deployment name
+  name: ion-deployment
   labels:
     app: ion
 spec:
-  replicas: 3  #3 pods everytime should exist
-  selector:    #Label selector for pods. Existing ReplicaSets whose pods are selected by this will be the ones affected by this deployment. It must match the pod template's labels.
+  replicas: 3
+  selector:
     matchLabels:
-      app: ion  #deployment should look to launch pods whose app name is ion
-  template:       #PodTemplate describes a template for creating copies of a predefined pod
+      app: ion
+  template:
     metadata:
       labels:
         app: ion
-    spec:        # TemplateSpec is used for PodTemplateSpec describes the data a pod should have when created from a template
+    spec:
       containers:
-      -name: ion
-       image: mohammadsohail558/dckr-repo:v2.0   #my docker repo
-       ports:
-       - containerPort: 80
+      - name: ion
+        image: mohammadsohail558/dckr-repo:v2.0
+        ports:
+        - containerPort: 80
